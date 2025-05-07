@@ -95,7 +95,6 @@ function AddSuperCategory() {
           </h2>
 
           <div className="flex items-center gap-x-4 mb-4 mt-7">
-            
             <TextField
               fullWidth
               label="Student Name"
@@ -119,7 +118,6 @@ function AddSuperCategory() {
           </div>
 
           <div className="flex items-center gap-x-4 mb-4 mt-4">
-            
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Gender</InputLabel>
               <Select
@@ -148,7 +146,6 @@ function AddSuperCategory() {
           </div>
 
           <div className="flex items-center gap-x-4 mb-4 mt-4">
-            
             <TextField
               fullWidth
               label="Date of Birth"
@@ -170,15 +167,63 @@ function AddSuperCategory() {
               }}
             />
           </div>
-
-          <div className="mb-4 flex items-center space-x-4">
-            <div className="border rounded p-4 w-24 h-24 flex items-center justify-center">
-              <PhotoCamera fontSize="large" />
+          <div className="flex items-center gap-x-4 mb-4 mt-4">
+            <div className="col-start-1 col-end-2 relative border-2 border-gray-400 border-dashed rounded-lg p-6">
+              <input
+                multiple
+                className="absolute inset-0 w-full h-full opacity-0 z-50"
+                accept="image/png, image/jpeg, image/gif"
+                type="file"
+              />
+              <div className="text-center">
+                <img
+                  className="mx-auto h-12 w-12"
+                  alt="Upload"
+                  src="https://www.svgrepo.com/show/357902/image-upload.svg"
+                />
+                <h3 className="mt-2 text-sm font-medium">
+                  <label className="relative cursor-pointer">
+                    <span>Drag and drop</span>
+                    <span className="text-indigo-600 dark:text-yellow-500">
+                      {" "}
+                      or browse
+                    </span>
+                    <span> to upload</span>
+                  </label>
+                </h3>
+                <p className="mt-1 text-xs text-gray-500">
+                  PNG, JPG, GIF up to 10MB
+                </p>
+              </div>
             </div>
-            <Button variant="contained" component="label">
-              Select Image
-              <input hidden accept="image/*" type="file" />
-            </Button>
+            <div className="col-start-1 col-end-2 relative border-2 border-gray-400 border-dashed rounded-lg p-6">
+            <input
+              multiple
+              className="absolute inset-0 w-full h-full opacity-0 z-50"
+              accept="image/png, image/jpeg, image/gif"
+              type="file"
+            />
+            <div className="text-center">
+              <img
+                className="mx-auto h-12 w-12"
+                alt="Upload"
+                src="https://www.svgrepo.com/show/357902/image-upload.svg"
+              />
+              <h3 className="mt-2 text-sm font-medium">
+                <label className="relative cursor-pointer">
+                  <span>Drag and drop</span>
+                  <span className="text-indigo-600 dark:text-yellow-500">
+                    {" "}
+                    or browse
+                  </span>
+                  <span> to upload</span>
+                </label>
+              </h3>
+              <p className="mt-1 text-xs text-gray-500">
+                PNG, JPG, GIF up to 10MB
+              </p>
+            </div>
+            </div>
           </div>
         </div>
 

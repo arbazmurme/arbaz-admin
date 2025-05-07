@@ -144,8 +144,8 @@ const StudentTable = () => {
     <>
       <AddCategory />
       <div className="p-4 text-stone-50">
-        <div className="flex justify-between mb-4">
-          <div className="flex gap-2">
+        <div className="flex flex-col md:flex-row justify-between mb-4 gap-2">
+          <div className="flex flex-wrap gap-2">
             <button
               className="bg-[#ef9d10] px-3 py-1 rounded flex items-center gap-1"
               onClick={exportToExcel}
@@ -175,19 +175,21 @@ const StudentTable = () => {
               Print
             </button>
           </div>
-          <input
-            type="text"
-            placeholder="Search"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="border-2 px-2 py-1 rounded"
-            style={{
-              width: "200px",
-              borderColor: "gray", // Ensure it's visible
-              backgroundColor: "#fff", // Ensure contrast against the background
-              color: "black", // Set text color
-            }}
-          />
+
+          <div className="mt-2 md:mt-0">
+            <input
+              type="text"
+              placeholder="Search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="border-2 px-2 py-1 rounded w-full md:w-[200px]"
+              style={{
+                borderColor: "gray",
+                backgroundColor: "#fff",
+                color: "black",
+              }}
+            />
+          </div>
         </div>
 
         <div className="overflow-x-auto shadow rounded" id="student-table">

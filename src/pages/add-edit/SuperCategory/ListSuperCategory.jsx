@@ -142,35 +142,52 @@ const StudentTable = () => {
   return (
     <div className="p-4 text-stone-50">
       <div className="flex justify-between mb-4">
-        <div className="flex gap-2">
-          <button
-            className="bg-[#ef9d10] px-3 py-1 rounded flex items-center gap-1"
-            onClick={exportToExcel}
-          >
-            <AddBox fontSize="small" sx={{ color: "white" }} />
-            Excel
-          </button>
-          <button
-            className="bg-[#65be6c] px-3 py-1 rounded flex items-center gap-1"
-            onClick={exportToCSV}
-          >
-            <AddBox fontSize="small" sx={{ color: "white" }} />
-            CSV
-          </button>
-          <button
-            className="bg-[#0171b9] px-3 py-1 rounded flex items-center gap-1"
-            onClick={exportToPDF}
-          >
-            <AddBox fontSize="small" sx={{ color: "white" }} />
-            PDF
-          </button>
-          <button
-            className="bg-[#ed5150] px-3 py-1 rounded flex items-center gap-1"
-            onClick={() => handlePrint("student-table")}
-          >
-            <AddBox fontSize="small" sx={{ color: "white" }} />
-            Print
-          </button>
+        <div className="flex flex-col md:flex-row justify-between mb-4 gap-2">
+          <div className="flex flex-wrap gap-2">
+            <button
+              className="bg-[#ef9d10] px-3 py-1 rounded flex items-center gap-1"
+              onClick={exportToExcel}
+            >
+              <AddBox fontSize="small" sx={{ color: "white" }} />
+              Excel
+            </button>
+            <button
+              className="bg-[#65be6c] px-3 py-1 rounded flex items-center gap-1"
+              onClick={exportToCSV}
+            >
+              <AddBox fontSize="small" sx={{ color: "white" }} />
+              CSV
+            </button>
+            <button
+              className="bg-[#0171b9] px-3 py-1 rounded flex items-center gap-1"
+              onClick={exportToPDF}
+            >
+              <AddBox fontSize="small" sx={{ color: "white" }} />
+              PDF
+            </button>
+            <button
+              className="bg-[#ed5150] px-3 py-1 rounded flex items-center gap-1"
+              onClick={() => handlePrint("student-table")}
+            >
+              <AddBox fontSize="small" sx={{ color: "white" }} />
+              Print
+            </button>
+          </div>
+
+          <div className="mt-2 md:mt-0">
+            <input
+              type="text"
+              placeholder="Search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="border-2 px-2 py-1 rounded w-full md:w-[200px]"
+              style={{
+                borderColor: "gray",
+                backgroundColor: "#fff",
+                color: "black",
+              }}
+            />
+          </div>
         </div>
         <input
           type="text"

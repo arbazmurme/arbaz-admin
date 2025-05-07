@@ -13,15 +13,16 @@ const MenuLeft = ({ isOpen, setIsOpen }) => {
   const location = useLocation();
 
   const [activeIndex, setActiveIndex] = useState(null);
-  const [activeSubIndex, setActiveSubIndex] = useState(null);
 
   const toggleMenu = (index) => {
     setActiveIndex(index === activeIndex ? null : index);
-    setActiveSubIndex(null);
   };
 
-  const toggleSubMenu = (index) => {
-    setActiveSubIndex(index === activeSubIndex ? null : index);
+  // Close sidebar on mobile when a link is clicked
+  const handleLinkClick = () => {
+    if (window.innerWidth < 640) {
+      setIsOpen(false);
+    }
   };
 
   const menuItems = [
@@ -48,9 +49,8 @@ const MenuLeft = ({ isOpen, setIsOpen }) => {
         {
           title: "Add & list Category",
           icon: <MdCategory />,
-          path: "admin/category/list",
+          path: "/admin/category/list",
         },
-        
       ],
     },
     {
@@ -84,7 +84,7 @@ const MenuLeft = ({ isOpen, setIsOpen }) => {
       </div>
 
       <nav className="flex-1 overflow-y-auto p-4 space-y-2">
-        <Link to="/">
+        <Link to="/" onClick={handleLinkClick}>
           <div
             className={`flex items-center space-x-2 border-b border-white/10 pb-3 hover:text-white ${
               location.pathname === "/" ? "font-bold" : ""
@@ -109,11 +109,11 @@ const MenuLeft = ({ isOpen, setIsOpen }) => {
                 <FaChevronDown className="ml-auto" />
               </button>
             ) : (
-              <Link to={menuItem.path}>
+              <Link to={menuItem.path} onClick={handleLinkClick}>
                 <div
                   className={`flex items-center p-2 rounded-lg text-sm transition-all ${
                     location.pathname === menuItem.path
-                      ? " font-bold"
+                      ? "font-bold"
                       : "hover:bg-white/20"
                   }`}
                 >
@@ -127,11 +127,11 @@ const MenuLeft = ({ isOpen, setIsOpen }) => {
               <ul className="pl-4 space-y-1 mt-2">
                 {menuItem.subItems.map((sub, subIndex) => (
                   <li key={subIndex}>
-                    <Link to={sub.path}>
+                    <Link to={sub.path} onClick={handleLinkClick}>
                       <div
                         className={`flex items-center text-sm p-2 rounded-md transition-all ${
                           location.pathname === sub.path
-                            ? " font-bold"
+                            ? "font-bold"
                             : "hover:bg-white/10"
                         }`}
                       >
