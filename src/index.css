@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.icon-wrapper {
+  background-color: #0000000e;
+  padding: 10px;
+  border-radius: 4px 0 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: #00000063;
+  /* font-size: 2rem  !important;  */
+}
+
+.MuiInputAdornment-root {
+  margin-left: -12px !important;
+}
+
+/* Target the label inside MUI TextField */
+.MuiFormControl-root .MuiInputLabel-root {
+  font-weight: bold;
+  color: #013371dc;
+}
